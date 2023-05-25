@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const CoffeCardContainer = styled.section`
+  width: 23rem;
   padding: 1.5rem 0;
   display: flex;
   border-bottom: 1px solid ${(props) => props.theme["gray-400"]};
@@ -47,7 +48,7 @@ export const CoffeCardContainer = styled.section`
   }
 `;
 
-export const QuantityCounter = styled.div`
+export const CounterContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.25rem;

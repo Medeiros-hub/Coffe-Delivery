@@ -9,8 +9,12 @@ export const PaymentContainer = styled.div`
     padding: 0 2.5rem 2.5rem 2.5rem;
     display: flex;
     gap: 0.75rem;
+
+    input {
+      display: none;
+    }
     
-    button {
+    label {
       background: ${(props) => props.theme["gray-400"]};
       display: flex;
       border-radius: 6px;
@@ -21,7 +25,7 @@ export const PaymentContainer = styled.div`
       transition: all 0.2s;
     }
 
-    button:hover {
+    label:hover, label.selected {
       background: ${(props) => props.theme["gray-500"]};
     }
 

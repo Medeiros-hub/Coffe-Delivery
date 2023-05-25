@@ -1,11 +1,14 @@
 import { styled } from "styled-components";
 
 export const CheckoutContainer = styled.main`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
+  & > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem;
+  }
 
   section > h1 {
     font-family: "Baloo 2", cursive;
@@ -65,25 +68,26 @@ export const ListOrder = styled.div`
   padding: calc(2.5rem - 1.5rem) 2.5rem 2.5rem;
   width: fit-content;
 
-  a button {
+  button[type="submit"] {
     cursor: pointer;
-    width: 100%;
+    width: 23rem;
     font-size: 0.875rem;
     line-height: 1.6;
     padding: 0.75rem 0;
     border-radius: 6px;
     margin-top: 1.5rem;
-    background: ${props => props.theme["yellow-400"]};
-    color: ${props => props.theme.white};
+    background: ${(props) => props.theme["yellow-400"]};
+    color: ${(props) => props.theme.white};
     transition: all 0.2s;
   }
 
-  a button:hover {
-    background: ${props => props.theme["yellow-800"]};
+  button[type="submit"]:hover {
+    background: ${(props) => props.theme["yellow-800"]};
   }
 `;
 
 export const ValueArea = styled.section`
+  width: 23rem;
   padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
@@ -94,7 +98,7 @@ export const ValueArea = styled.section`
     justify-content: space-between;
 
     span {
-      color: ${props => props.theme["gray-700"]};
+      color: ${(props) => props.theme["gray-700"]};
       font-size: 1rem;
     }
   }
@@ -103,7 +107,7 @@ export const ValueArea = styled.section`
     span {
       font-weight: bold;
       font-size: 1.25rem;
-      color: ${props => props.theme["gray-800"]};
+      color: ${(props) => props.theme["gray-800"]};
     }
   }
 `;

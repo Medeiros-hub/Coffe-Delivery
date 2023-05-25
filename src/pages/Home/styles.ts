@@ -15,6 +15,9 @@ export const HomeCover = styled.div`
   }
 
   img {
+    -moz-window-dragging: no-drag;
+    -webkit-user-drag: none;
+    user-select: none;
     width: 29.75rem;
   }
 

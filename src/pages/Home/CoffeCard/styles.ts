@@ -58,6 +58,7 @@ export const Price = styled.div`
   display: flex;
   align-items: baseline;
   color: ${(props) => props.theme["gray-700"]};
+  margin-right: 1.4375rem;
 
   span {
     font-size: 0.875rem;
@@ -71,14 +72,17 @@ export const Price = styled.div`
   }
 `;
 
-export const QuantityCounter = styled.div`
+export const CounterContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.25rem;
   background: ${(props) => props.theme["gray-400"]};
   border-radius: 6px;
-  margin: 0 0.5rem 0 1.4375rem;
   padding: 0.5rem;
+
+  span {
+    user-select: none;
+  }
 
   svg {
     cursor: pointer;
@@ -95,6 +99,7 @@ export const BagButton = styled.button`
   width: 2.375rem;
   height: 2.375rem;
   cursor: pointer;
+  margin-left: 0.375rem;
 
   display: flex;
   align-items: center;
@@ -104,3 +109,5 @@ export const BagButton = styled.button`
     background: ${(props) => props.theme["purple-400"]};
   }
 `;
+
+

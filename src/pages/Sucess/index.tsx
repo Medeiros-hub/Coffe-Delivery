@@ -1,8 +1,23 @@
+import { useContext, useEffect, useState } from "react";
 import { InfoWrapper, SucessContainer, SucessHeader } from "./styles";
 import deliveryMan from "../../assets/Illustration.svg";
 import { CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react";
+import { LocationContext } from "../../contexts/LocationContext";
 
 export function Sucess() {
+  const [selectedOption, setSelectedOption] = useState<string>("");  
+  const { currentPlace, location, payment } = useContext(LocationContext);
+
+
+  useEffect(() => {
+    switch (payment) {
+      case "cash": return setSelectedOption("Dinheiro")
+      case "creditCard": return setSelectedOption("Cartão de Crédito")
+      case "debitCard": return setSelectedOption("Cartão de Débito")
+      default: return setSelectedOption("Unknown")
+    }
+  }, [payment])
+  
   return (
     <SucessContainer>
       <section>
@@ -18,9 +33,14 @@ export function Sucess() {
               </div>
               <article>
                 <p>
-                  Entrega em <span>Rua João Daniel Martinelli, 102</span>
+                  Entrega em{" "}
+                  <span>
+                    {location.logradouro}, {currentPlace.street}
+                  </span>
                 </p>
-                <p>Farrapos - Porto Alegre, RS</p>
+                <p>
+                  {location.bairro} - {location.localidade}, {location.uf}
+                </p>
               </article>
             </aside>
             <aside>
@@ -38,7 +58,7 @@ export function Sucess() {
               </div>
               <article>
                 <p>Pagamento na entrega</p>
-                <span>Cartão de Crédito</span>
+                <span>{selectedOption}</span>
               </article>
             </aside>
           </div>

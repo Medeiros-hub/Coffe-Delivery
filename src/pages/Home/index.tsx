@@ -15,6 +15,7 @@ export interface CardType {
   image: string;
   name: string;
   tags: string[];
+  quantity: number;
   description: string;
   price: number;
 }
@@ -27,8 +28,6 @@ export function Home() {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-
-  console.log(data);
 
   return (
     <>
@@ -91,10 +90,12 @@ export function Home() {
               return (
                 <CoffeCard
                   key={coffe.id}
+                  id={coffe.id}
                   name={coffe.name}
                   image={coffe.image}
                   tags={coffe.tags}
                   description={coffe.description}
+                  quantity={coffe.quantity}
                   price={coffe.price}
                 />
               );

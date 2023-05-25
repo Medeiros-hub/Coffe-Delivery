@@ -17,7 +17,7 @@ export const NavbarContainer = styled.nav`
   }
 `;
 
-export const defaultButton = styled.div`
+export const defaultButton = styled.button`
   font-family: "Roboto", sans-serif;
   padding: 0.5rem;
   border-radius: 6px;
